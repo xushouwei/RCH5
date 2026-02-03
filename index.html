@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="zh-CN" >
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <title>纯CSS切换按钮 |开-关开关</title>
@@ -128,14 +128,13 @@ body
 #button-13 .knobs:before, #button-13 .knobs:after, #button-13 .knobs span
 {
     position: absolute;
-    top: 4px;
+    top: 5px;
     width: 100px;
     height: 10px;
     font-size: 40px;
     font-weight: bold;
     text-align: center;
-    line-height: 1;
-    padding: 9px 4px;
+    line-height: 72px;
     border-radius: 2px;
     transition: 0.3s ease all;
 }
@@ -149,20 +148,20 @@ body
 #button-13 .knobs:before
 {
     content: '连续';
-    left: 4px;
+    left: 5px;
 }
 
 #button-13 .knobs:after
 {
     content: '单次';
-    right: 4px;
+    right: 5px;
 }
 
 #button-13 .knobs span
 {
-    width: 90px;
+    width: 95px;
     left: 100px;
-    height: 90px;
+    height: 80px;
     background-color: #03A9F4;
     z-index: 2;
 }
@@ -191,11 +190,17 @@ body
         <div class="layer"></div>
     </div>
   </div>
+  <div style="float: right;">
+    <audio id="audioPlayer" controls>
+        <source src="path/to/your/file.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+  </div>
 </div>
 <div class="app-cover" style="margin-top: 120px;width: 90%;">
   <div class="row">
     <div class="toggle-button-cover">
-      <div class="button-cover">
+      <div class="button-cover" onclick="sound(1)">
         <div class="button b2" id="button-13">
           1
         </div>
@@ -471,6 +476,13 @@ body
   </div>
 </div>
 
+<script>
+    function sound(index){
+        alert(index);
+        var audio = document.getElementById('audioPlayer');
+        audio.play();
+    }
+</script>
 
 </body>
 </html>
